@@ -1,0 +1,99 @@
+
+/*
+  This file is used for all of your global styles and CSS variables.
+  Check here https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties for more info on using CSS variables.
+*/
+:root {
+  --font-family: 'Nunito Sans', sans-serif;
+
+
+  --blume-header-height: 70px;
+
+  --blume-primary-h: 243;
+  --blume-primary-s: 90%;
+  --blume-primary-l: 59%;
+  --blume-primary: hsl( var(--blume-primary-h ), var(--blume-primary-s), var(--blume-primary-l) );
+  --blume-primary-dark: hsl( var(--blume-primary-h ), var(--blume-primary-s), calc( var(--blume-primary-l) - 5% ) );
+
+  --blume-secondary-h: 21;
+  --blume-secondary-s: 34%;
+  --blume-secondary-l: 89%;
+  --blume-secondary-lighter: hsl( var(--blume-secondary-h), var(--blume-secondary-s), calc( var(--blume-secondary-l) + 10% ) );
+  --blume-secondary-light: hsl( var(--blume-secondary-h), var(--blume-secondary-s), calc( var(--blume-secondary-l) + 6% ) );
+  --blume-secondary: hsl( var(--blume-secondary-h), var(--blume-secondary-s), var(--blume-secondary-l) );
+
+  --blume-spacer-xxs: 2px;
+  --blume-spacer-xs: 4px;
+  --blume-spacer-sm: 8px;
+  --blume-spacer: 16px;
+  --blume-spacer-lg: 24px;
+  --blume-spacer-xl: 32px;
+  --blume-spacer-xxl: 64px;
+  --blume-mute: lightgray;
+
+  --blume-radius: 16px;
+  --blume-radius-pill: 10000px;
+
+  --blume-black-lighter:hsl(0, 2%, 31%);
+  --blume-black-light:hsl(0, 2%, 21%);
+  --blume-black:hsl(0, 2%, 11%);
+
+  --blume-action: hsl(51, 75%, 83%);
+
+  --blume-zindex-tooltip: 700;
+  --blume-zindex-projectnav: 800;
+  --blume-zindex-header: 900;
+  --blume-zindex-dialog: 1000;
+
+}
+
+
+::-webkit-scrollbar { width: var( --blume-spacer-sm ); }
+::-webkit-scrollbar-track { background: transparent; }
+
+::-webkit-scrollbar-thumb {
+  border-radius: var( --blume-radius-pill );
+  background-color: var( --blume-primary );
+}
+
+::-webkit-scrollbar-thumb:hover { background-color: var( --blume-primary-dark ); }
+
+html, body {
+  font-family: var(--font-family);
+  padding: 0;
+  margin: 0;
+}
+
+@media (prefers-color-scheme: light) {
+  html,
+  body {
+    background: white;
+  }
+
+}
+
+/* latin */
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(/assets/fonts/nunito-light.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(/assets/fonts/nunito-regular.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(/assets/fonts/nunito-bold.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
