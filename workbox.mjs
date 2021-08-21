@@ -5,9 +5,6 @@ injectManifest({
   mode: 'production',
   globDirectory: 'dist/',
   globIgnores: ['polyfills/*.js', 'legacy-*.js', 'nomodule-*.js'],
-  navigateFallback: '/index.html',
-  skipWaiting: true,
-  clientsClaim: true,
   globPatterns: [
     '**/*.{html,js,json,css,woff2,webmanifest}',
     'assets/icons/*.{png,webp,jpg}',
