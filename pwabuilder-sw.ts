@@ -1,4 +1,5 @@
-import { precacheAndRoute, } from "workbox-precaching";
+import {precacheAndRoute, createHandlerBoundToURL} from 'workbox-precaching'
+import {NavigationRoute, registerRoute} from 'workbox-routing'
 import { } from 'workbox-routing';
 
 declare const self: ServiceWorkerGlobalScope;
@@ -12,9 +13,12 @@ self.addEventListener("message", (event: any) => {
 
 
 
+// precacheAndRoute(self.__WB_MANIFEST)
+
 try {
   //@ts-ignore
   precacheAndRoute(self.__WB_MANIFEST);
+  registerRoute(new NavigationRoute(createHandlerBoundToURL('/index.html')))
 }
 catch (err) {
   console.info("if you are in development mode this error is expected: ", err);
