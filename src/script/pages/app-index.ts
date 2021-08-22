@@ -92,7 +92,7 @@ export class AppIndex extends LitElement {
             path: '/',
             component: 'page-home',
           }, {
-            path: '(.*)',
+            path: '/about',
             component: 'page-about',
             action: async () => {
               await import('./page-about.js');
