@@ -1,4 +1,4 @@
-import {precacheAndRoute, createHandlerBoundToURL} from 'workbox-precaching'
+import {createHandlerBoundToURL} from 'workbox-precaching'
 import {NavigationRoute, registerRoute} from 'workbox-routing'
 import {CacheFirst, StaleWhileRevalidate} from 'workbox-strategies';
 import {CacheableResponsePlugin} from 'workbox-cacheable-response';
