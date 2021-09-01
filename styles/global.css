@@ -7,8 +7,6 @@
   --font-family: 'Rampart One', sans-serif;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Rampart+One&display=swap');
-
 
 ::-webkit-scrollbar { width: var( --blume-spacer-sm ); }
 ::-webkit-scrollbar-track { background: transparent; }
