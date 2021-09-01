@@ -20,8 +20,10 @@
   },
   "homepage": "https://github.com/soelen/workbox-tests#readme",
   "dependencies": {
+    "@reduxjs/toolkit": "^1.6.1",
     "@vaadin/router": "^1.7.2",
     "lit": "^2.0.0-rc.2",
+    "redux-thunk": "^2.3.0",
     "workbox-build": "^5.1.4",
     "workbox-core": "^6.0.2",
     "workbox-routing": "^6.2.4",
