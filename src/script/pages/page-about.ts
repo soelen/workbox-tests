@@ -1,5 +1,6 @@
 import { css, html } from 'lit';
 import { customElement } from 'lit/decorators';
+import { RootState } from '../store/store';
 import { PageElement } from './page-element';
 
 @customElement('page-about')
@@ -13,6 +14,10 @@ export class PageAbout extends PageElement {
 
   constructor() {
     super();
+  }
+
+  stateChanged( state: RootState ) {
+
   }
 
   render() {

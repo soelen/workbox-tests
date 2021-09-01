@@ -1,5 +1,6 @@
 import { css, html } from 'lit';
 import { customElement, } from 'lit/decorators';
+import { RootState } from '../store/store';
 
 // For more info on the @pwabuilder/pwainstall component click here https://github.com/pwa-builder/pwa-install
 import { PageElement } from './page-element';
@@ -20,6 +21,10 @@ export class PageHome extends PageElement {
 
   constructor() {
     super();
+  }
+
+  stateChanged( state: RootState ) {
+
   }
 
   async firstUpdated() {
