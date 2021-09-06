@@ -64,21 +64,21 @@ catch (err) {
   console.info("if you are in development mode this error is expected: ", err);
 }
 
-self.addEventListener('activate', function(event) {
-  event.waitUntil(
-    caches.keys().then(function(cacheNames) {
-      return Promise.all(
-        cacheNames.filter( cacheName => {
-          return true;
-          // Return true if you want to remove this cache,
-          // but remember that caches are shared across
-          // the whole origin
-        }).map(function(cacheName) {
-          console.dir( 'ok time to clear', cacheName );
-          return caches.delete(cacheName);
-        })
-      );
-    })
-  );
-});
+// self.addEventListener('activate', function(event) {
+//   event.waitUntil(
+//     caches.keys().then(function(cacheNames) {
+//       return Promise.all(
+//         cacheNames.filter( cacheName => {
+//           return true;
+//           // Return true if you want to remove this cache,
+//           // but remember that caches are shared across
+//           // the whole origin
+//         }).map(function(cacheName) {
+//           console.dir( 'ok time to clear', cacheName );
+//           return caches.delete(cacheName);
+//         })
+//       );
+//     })
+//   );
+// });
 
