@@ -55,11 +55,12 @@ if ('serviceWorker' in navigator) {
     }
   });
 
-  wb.messageSkipWaiting();
 
   wb.addEventListener('waiting', (event) => {
     console.dir(`A new service worker has installed, but it can't activate` +
       `until all tabs running the current version have fully unloaded.`);
+
+    wb.messageSkipWaiting();
   });
 
   wb.addEventListener('message', (event) => {
