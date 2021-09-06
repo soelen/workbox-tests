@@ -1,6 +1,17 @@
 import { LitElement, css, html } from 'lit';
 import { customElement, state } from 'lit/decorators';
 // import { Workbox } from 'workbox-window';
+import {Workbox} from 'workbox-window';
+
+// import * as three from 'three';
+// import { Object3D } from 'three';
+// const object = new Object3D();
+// object.position.x = 12;
+// console.dir( object );
+
+// import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
+// const loader = new GLTFLoader();
+// console.dir( loader );
 
 import './page-home';
 
@@ -20,6 +31,44 @@ export const go = ( pathname: string, search: string = '', hash: string = '', ) 
   path = hash ? `${ path }${ hash }` : path;
   history.pushState( null, '', path )
   window.dispatchEvent( new CustomEvent( 'vaadin-router-go', { detail: {pathname, search, hash } } ) );
+}
+
+
+if ('serviceWorker' in navigator) {
+
+  const wb = new Workbox('/pwabuilder-sw.js');
+
+  wb.addEventListener('activated', (event) => {
+    // `event.isUpdate` will be true if another version of the service
+    // worker was controlling the page when this version was registered.
+    if (!event.isUpdate) {
+      console.log('Service worker activated for the first time!');
+
+      // If your service worker is configured to precache assets, those
+      // assets should all be available now.
+    }
+  });
+
+  wb.addEventListener('installed', (event) => {
+    if (!event.isUpdate) {
+      console.log( 'First-installed code goes here...');
+    }
+  });
+
+  wb.addEventListener('waiting', (event) => {
+    console.log(`A new service worker has installed, but it can't activate` +
+      `until all tabs running the current version have fully unloaded.`);
+  });
+
+  wb.addEventListener('message', (event) => {
+    if (event.data.type === 'CACHE_UPDATED') {
+      const {updatedURL} = event.data.payload;
+
+      console.log(`A newer version of ${updatedURL} is available!`);
+    }
+  });
+
+  wb.register();
 }
 
 @customElement('app-index')
