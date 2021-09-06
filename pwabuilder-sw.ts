@@ -8,7 +8,9 @@ declare const self: ServiceWorkerGlobalScope;
 
 // Add custom service worker logic, such as a push notification serivce, or json request cache.
 self.addEventListener("message", (event: any) => {
+    console.dir( 'oh wow a message!')
   if (event.data && event.data.type === "SKIP_WAITING") {
+    console.dir( 'ok skipping...')
     self.skipWaiting();
   }
 });
