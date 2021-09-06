@@ -32,11 +32,7 @@
       "sizes": "24x24"
     }
   ],
-  "screenshots": [
-    {
-      "src": "assets/screenshots/screen.webp"
-    }
-  ],
+  "screenshots": [],
   "features": [
     "Cross Platform",
     "fast",

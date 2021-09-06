@@ -36,7 +36,7 @@ export class PageHome extends PageElement {
   render() {
     return html`
     Home
-    <p>Bebebe</p>
+    <p>Bibibi</p>
     `;
   }
 }
